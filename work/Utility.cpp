@@ -69,3 +69,18 @@ double std::CalcLpDist(const Coord& p1, const Coord& p2, double p) {
    dist = pow(dist, 1.0 / p);
    return dist;
 }
+
+int std::GetRandomWeightedElem(const vector<int>& weight_list) {
+   assert(!weight_list.empty());
+   int sum = accumulate(ALL(weight_list), 0);
+   assert(sum > 0);
+
+   int rnd = XorShift() % sum;
+
+   int cur = 0;
+   rep(i, weight_list.size()) {
+      cur += weight_list[i];
+      if (cur > rnd) return i;
+   }
+   return weight_list.size() - 1;
+}

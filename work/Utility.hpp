@@ -77,4 +77,7 @@ T GetRandomElem(const vector<T>& list) {
    return list[ind];
 }
 
+// 指定されたウェイトで要素をランダムに選択する
+int GetRandomWeightedElem(const vector<int>& weight_list);
+
 }  // namespace std
