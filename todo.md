@@ -38,6 +38,12 @@ $ gdb main /mnt/wslg/dumps/core.main
 $ gprof main gmon.out > prof.txt
 ```
 
+# clip.exeを経由すると文字化け
+```shell
+$ ./main | iconv -t UTF-16LE | clip.ex
+```
+とiconvで明示的に変換を行う。
+
 # 高速化
 * 多次元配列の一次元化
 * 呼び出し回数の多い関数内の変数のstatic化

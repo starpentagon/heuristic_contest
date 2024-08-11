@@ -24,51 +24,13 @@ bool operator<(const State& lhs, const State& rhs) {
    return false;
 }
 
-State::State()
-    : turn_(0), first_move_(kInvalidMove) {
-   debug_st(turn_);
+State::State() {
 }
 
 State State::operator=(const State& state) {
    // メンバ変数をコピー
    // Note: メンバ変数を追加した場合はここに追加する
-   turn_ = state.turn_;
-   first_move_ = state.first_move_;
-
    return *this;
-}
-
-bool State::IsFinished() const {
-   assert(false);
-   return false;
-}
-
-ScoreType State::CalcScore() const {
-   assert(false);
-   return 0;
-}
-
-ScoreType State::CalcSearchScore() const {
-   assert(false);
-   return 0;
-}
-
-vector<MoveType> State::GetAllMoves() const {
-   assert(false);
-   vector<MoveType> move_list;
-
-   return move_list;
-}
-
-vector<MoveType> State::GetNeibours() const {
-   assert(false);
-   vector<MoveType> move_list;
-
-   return move_list;
-}
-
-void State::Move(const MoveType& move) {
-   assert(false);
 }
 
 string State::GetString() const {
