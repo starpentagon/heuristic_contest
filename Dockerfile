@@ -8,8 +8,8 @@ USER root
 
 # Install jupyter notebook
 RUN apt-get update \
- && apt-get -y upgrade \
- && apt-get -y --no-install-recommends install jupyter-notebook python3-pip g++
+   && apt-get -y upgrade \
+   && apt-get -y --no-install-recommends install jupyter-notebook python3-pip g++ make ccache gdb
 
 RUN pip install numpy pandas scikit-learn matplotlib
 RUN pip install ipywidgets widgetsnbextension plotly optuna 
