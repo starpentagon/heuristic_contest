@@ -17,14 +17,15 @@ class SearchInfo {
    // 探索開始
    void SearchStart();
 
-   // 探索回数上限を設定する
-   void SetTerminateIter(const int iter) {
-      terminate_iter_ = iter;
-   }
-
    // 探索時間上限(ms)を設定する
    void SetTerminateTime(const int ms) {
       terminate_time_ = ms;
+   }
+
+   // 経過時間を取得する
+   int GetElapsedTime() const {
+      auto e_time = chrono::system_clock::now() - start_time_;
+      return chrono::duration_cast<chrono::milliseconds>(e_time).count();
    }
 
    // 探索終了条件が成立しているかチェックする
@@ -51,7 +52,6 @@ class SearchInfo {
 
    chrono::system_clock::time_point start_time_;  // 探索開始時間
 
-   int terminate_iter_;  // 探索回数上限
    int terminate_time_;  // 探索時間上限(ms)
 };
 }  // namespace std

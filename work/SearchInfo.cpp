@@ -14,7 +14,7 @@ template<class T> bool chmin(T &a, const T &b) {if(a>b) {a=b; return true;} retu
 using namespace std;
 
 SearchInfo::SearchInfo()
-    : iter_(0), terminate_iter_(numeric_limits<int>::max()), terminate_time_(numeric_limits<int>::max()) {
+    : iter_(0), terminate_time_(numeric_limits<int>::max()) {
    start_time_ = chrono::system_clock::now();
 }
 
@@ -23,10 +23,6 @@ void SearchInfo::SearchStart() {
 }
 
 const bool SearchInfo::IsTerminate() const {
-   if (iter_ >= terminate_iter_) {
-      return true;
-   }
-
    auto e_time = chrono::system_clock::now() - start_time_;
    int e_time_ms = chrono::duration_cast<chrono::milliseconds>(e_time).count();
 
