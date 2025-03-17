@@ -23,6 +23,10 @@ template<class T> bool chmin(T &a, const T &b) {if(a>b) {a=b; return true;} retu
 template<class T> ostream& operator<<(ostream& os, vector<T>& vec){ rep(i, vec.size()) os << vec[i] << (i+1==(int)vec.size() ? "" : " "); return os;}
 // clang-format on
 
+State LoadProblem();
+SearchInfo search_info;
+Parameter param;
+
 int main() {
    ios::sync_with_stdio(false);
    std::cin.tie(nullptr);
@@ -34,4 +38,17 @@ int main() {
    cerr << endl;
 
    return 0;
+}
+
+State LoadProblem() {
+#ifdef LOCAL
+   string def_file_name;
+   cin >> def_file_name;
+
+   ifstream cin(def_file_name);
+   assert(!cin.fail() && cin.is_open());
+#endif
+
+   State state;
+   return state;
 }
