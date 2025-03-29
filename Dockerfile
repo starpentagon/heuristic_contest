@@ -9,13 +9,17 @@ USER root
 # Install jupyter notebook
 RUN apt-get update \
    && apt-get -y upgrade \
-   && apt-get -y --no-install-recommends install jupyter-notebook python3-pip g++ make ccache gdb git cmake less
+   && apt-get -y --no-install-recommends install jupyter-notebook python3-pip g++ make ccache gdb git cmake less curl
 
 RUN pip install numpy pandas scikit-learn matplotlib
 RUN pip install ipywidgets widgetsnbextension plotly optuna 
 RUN pip install networkx
 RUN pip install mip
 RUN pip install graphviz pydotplus
+
+# Rust をインストール
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:$PATH"
 
 # Jupyter notebook hashed password
 ## $ python3

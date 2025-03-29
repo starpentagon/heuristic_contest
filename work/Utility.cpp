@@ -47,7 +47,7 @@ ll std::CalcManhattanDist(const Coord& p1, const Coord& p2) {
    return dist;
 }
 
-ll CalcChebyshevDist(const Coord& p1, const Coord& p2) {
+ll std::CalcChebyshevDist(const Coord& p1, const Coord& p2) {
    const auto [x1, y1] = p1;
    const auto [x2, y2] = p2;
 
