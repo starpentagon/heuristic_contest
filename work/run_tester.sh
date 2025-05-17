@@ -5,9 +5,9 @@ if [ $# -ne 1 ]; then
 fi
 
 make clean > /dev/null
-make -j CFLAGS_EXTRA=-DLOCAL_JUDGE > /dev/null
+make -j > /dev/null
 
 # 引数で指定されたseedを使ってテストケースを実行する
 echo "run test $1"
-# echo 01_testset/in/$1.txt | ./main | iconv -t UTF-16LE  | clip.exe
-echo 01_testset/in/$1.in | ./main > /dev/null
+java -jar tester.jar -exec "./main" -novis -seed $1 -saveSolOutput # -saveSolError
+cp $1.out /mnt/c/test/mm161/tester/

@@ -43,3 +43,7 @@ core
 .ipynb_checkpoints
 Makefile.gen
 Makefile_sub.gen
+
+tester.jar
+work/01_testset/in
+work/result

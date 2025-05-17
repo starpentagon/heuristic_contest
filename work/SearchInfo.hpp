@@ -46,6 +46,11 @@ class SearchInfo {
    // 最大更新間隔を取得する
    int GetMaxUpdateInterval() const;
 
+   // 進捗状況[0, 1]を取得する
+   double GetProgress() const {
+      return GetElapsedTime() / (double)terminate_time_;
+   }
+
   protected:
    int iter_;                      // 探索回数数
    vector<int> best_update_iter_;  // 最善解を更新時の探索回数数の履歴
