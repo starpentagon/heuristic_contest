@@ -21,6 +21,9 @@ RUN pip install graphviz pydotplus
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:$PATH"
 
+# boostをインストール
+RUN apt-get update && apt install -y libboost-all-dev
+
 # Jupyter notebook hashed password
 ## $ python3
 ## >>> from notebook.auth import passwd
