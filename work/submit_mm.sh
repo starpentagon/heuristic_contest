@@ -11,8 +11,14 @@ fi
 echo "compile combined.cpp"
 g++ -std=c++17 combined.cpp -o main
 
+# 公式Visualizerで実行
 echo "run test seed=1"
 java -jar tester.jar -exec "./main" -novis -seed 1
 
-echo "copy to /mnt/c/test/mm161/tester/"
-cp combined.cpp /mnt/c/test/mm161/submit/HordeChess.cpp
+# ソースをコピー
+contest_no="mmXXX"
+contest_name="Contest Name"
+
+echo "copy to /mnt/c/test/$contest_no/tester/"
+cp combined.cpp /mnt/c/test/$contest_no/submit/$contest_name.cpp
+
