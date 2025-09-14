@@ -13,13 +13,6 @@ template<class T> bool chmax(T &a, const T &b) {if(a<b) {a=b; return true;} retu
 template<class T> bool chmin(T &a, const T &b) {if(a>b) {a=b; return true;} return false; }
 // clang-format on
 
-long long std::GetWorstValue(const OptimizeType opt_type) {
-   if (opt_type == kOptMin)
-      return kInfVal;
-   else
-      return -kInfVal;
-}
-
 ll std::CalcSquareDist(const Coord& p1, const Coord& p2) {
    const auto [x1, y1] = p1;
    const auto [x2, y2] = p2;

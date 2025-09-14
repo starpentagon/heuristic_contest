@@ -17,38 +17,8 @@ ll CalcManhattanDist(const Coord& p1, const Coord& p2);         // マンハッ�
 ll CalcChebyshevDist(const Coord& p1, const Coord& p2);         // チェビシェフ距離
 double CalcLpDist(const Coord& p1, const Coord& p2, double p);  // Lp距離
 
-// 最適化のタイプ(最小化/最大化)
-enum OptimizeType {
-   kOptMin,  // 最小化
-   kOptMax   // 最大化
-};
-
-// 最小化/最大化に合わせて最も悪い値を返す
-static constexpr ll kInfVal = numeric_limits<ll>::max();
-
-ll GetWorstValue(const OptimizeType opt_type);
-
-// 最小化/最大化に合わせて値を更新する
-template <class T>
-bool changeBetter(T& a, const T& b, const OptimizeType opt_type) {
-   if (opt_type == kOptMin) {
-      // 最小化
-      if (a > b) {
-         a = b;
-         return true;
-      } else {
-         return false;
-      }
-   } else {
-      // 最大化
-      if (a < b) {
-         a = b;
-         return true;
-      } else {
-         return false;
-      }
-   }
-}
+static constexpr ll kLongInf = numeric_limits<ll>::max();
+static constexpr int kIntInf = numeric_limits<int>::max();
 
 // 要素 vec[i]が真になる要素のindexを取得する
 template <class T>
