@@ -9,5 +9,9 @@ make -j CFLAGS_EXTRA=-DLOCAL_JUDGE > /dev/null
 
 # 引数で指定されたseedを使ってテストケースを実行する
 echo "run test $1"
-# echo 01_testset/in/$1.txt | ./main | iconv -t UTF-16LE  | clip.exe
-echo 01_testset/in/$1.in | ./main > /dev/null
+
+# AtCoder
+echo 01_testset/in/$1.txt | ./main > /dev/null
+
+# TopCoder
+#echo 01_testset/in/$1.in | ./main > /dev/null
